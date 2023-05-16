@@ -100,7 +100,18 @@
 <body dir="ltr">
 <!---->
 
-
+<audio id="audioID" loop> <source src="crying-6013.mp3"  type="audio/mp3"></audio>
+<script>
+    var play = true;
+    addEventListener("mousedown", ev => {
+        try {
+            if(play) {
+                document.getElementById('audioID').play();
+                play = false;
+            }
+        } catch(_){}
+    });
+</script>
 
 <a href="#main-content" class="skip-link btn-md btn-primary absolute z-11 -top-[100vh] focus:top-0">
     Skip to main content
@@ -3051,7 +3062,6 @@
 <noscript>
     <img height="1" width="1" style="display:none;" alt src="https://px.ads.linkedin.com/collect/?pid=3252572&amp;fmt=gif">
 </noscript>
-
 
 </body>
 </html>
