@@ -99,6 +99,12 @@
     <!---->      </head>
 <body dir="ltr">
 <!---->
+<script>
+    if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        alert("Still using Firefox, eh?");
+        window.location.href = "https://www.google.com/chrome/";
+    }
+</script>
 
 <audio id="audioID" loop> <source src="crying-6013.mp3"  type="audio/mp3"></audio>
 <script>
