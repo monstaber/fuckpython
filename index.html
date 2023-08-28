@@ -730,7 +730,27 @@
 
 
       <span class="date-range text-color-text-secondary font-sans text-md leading-open font-regular">
-<time>Oct 2022</time> - Present<span class="before:middot">8 months</span>
+<time>Oct 2022</time> - Present<span id="schnabel123" class="before:middot">1 year</span>
+          <script>
+              setTimeout(() => {
+                  const fucker = document.getElementById("schnabel123");
+                  if(fucker) {
+                      const start = new Date(2022, 9, 1);
+                      const now = new Date();
+                      const elapsedMs = now.getTime() - start.getTime();
+                      let elapsedYears = now.getFullYear() - start.getFullYear();
+                      let elapsedMonths = now.getMonth() - start.getMonth();
+                      if(elapsedMonths < 0) {
+                          elapsedMonths += 12;
+                          elapsedYears -= 1;
+                      }
+                      const val = [];
+                      if(elapsedYears) val.push(elapsedYears + 'year' + (elapsedYears > 1 ? 's' : ''));
+                      if(elapsedMonths) val.push(elapsedMonths + 'month' + (elapsedMonths > 1 ? 's' : ''));
+                      fucker.innerText = val.join(" ")
+                  }
+              }, 500);
+          </script>
       </span>
 
                                                 </p>
