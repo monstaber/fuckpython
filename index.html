@@ -679,7 +679,7 @@
                                                 I Wish I Knew Ruby, Inc.
                                             </h4>
 
-                                            <p class="experience-group-header__duration">
+                                            <p id="schnabel321" class="experience-group-header__duration">
                                                 7 years 4 months
                                             </p>
                                         </div>
@@ -732,23 +732,27 @@
       <span class="date-range text-color-text-secondary font-sans text-md leading-open font-regular">
 <time>Oct 2022</time> - Present<span id="schnabel123" class="before:middot">1 year</span>
           <script>
+              function getSinceWhenText(start) {
+                  const now = new Date();
+                  const elapsedMs = now.getTime() - start.getTime();
+                  let elapsedYears = now.getFullYear() - start.getFullYear();
+                  let elapsedMonths = now.getMonth() - start.getMonth();
+                  if(elapsedMonths < 0) {
+                      elapsedMonths += 12;
+                      elapsedYears -= 1;
+                  }
+                  const val = [];
+                  if(elapsedYears) val.push(elapsedYears + ' year' + (elapsedYears > 1 ? 's' : ''));
+                  if(elapsedMonths) val.push(elapsedMonths + ' month' + (elapsedMonths > 1 ? 's' : ''));
+                  return val.join(" ")
+              }
               setTimeout(() => {
                   const fucker = document.getElementById("schnabel123");
-                  if(fucker) {
-                      const start = new Date(2022, 9, 1);
-                      const now = new Date();
-                      const elapsedMs = now.getTime() - start.getTime();
-                      let elapsedYears = now.getFullYear() - start.getFullYear();
-                      let elapsedMonths = now.getMonth() - start.getMonth();
-                      if(elapsedMonths < 0) {
-                          elapsedMonths += 12;
-                          elapsedYears -= 1;
-                      }
-                      const val = [];
-                      if(elapsedYears) val.push(elapsedYears + 'year' + (elapsedYears > 1 ? 's' : ''));
-                      if(elapsedMonths) val.push(elapsedMonths + 'month' + (elapsedMonths > 1 ? 's' : ''));
-                      fucker.innerText = val.join(" ")
-                  }
+                  if(fucker) fucker.innerText = getSinceWhenText(new Date(2022, 9, 1));
+
+                  const shit = document.getElementById("schnabel321");
+                  if(shit) shit.innerText = getSinceWhenText(new Date(2016, 1, 1));
+                  
               }, 500);
           </script>
       </span>
